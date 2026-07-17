@@ -36,3 +36,15 @@ def palindrom():
     return s == s[::-1]
 
 print(palindrom())
+
+def fibonacci():
+    n = 5
+    a,b = [0,1]
+    for i in range(n):
+        print(a)
+        new_sum = a+b
+        a = b
+        b = new_sum
+    return new_sum
+
+print(fibonacci())
