@@ -48,3 +48,14 @@ def fibonacci():
     return new_sum
 
 print(fibonacci())
+
+def sec_largest():
+    lst = [2,6,8,3]
+    count = 0
+    for i in lst:
+        for s in range(3): 
+          if i > 0:
+            i[s] += count[s]
+    return count
+
+print(sec_largest())
