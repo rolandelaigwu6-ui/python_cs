@@ -35,30 +35,28 @@ Output: Print out both the current state of the array and the calculated rolling
 """
 
 
-current_scores_board_list = [0, 0, 0, 0, 0]
+current_scores = [0, 0, 0, 0, 0]
 while True:
-  user_input = input("Enter A  valid score Ronaldo Scored in the ongoing match \n( or  type [ exit ] if the match has already Ended  ):  ")
+
+  user_input = input("Enter A  valid score Ronaldo Scored in the ongoing match \n( or  type [ exit ] if the match has already Ended  ): ")
   if user_input.lower() == "exit":
-    print("thanks: GoodBye")
+    print("\nthanks: GoodBye\n")
     break
-  elif not int(user_input):
-    print("oya Bye Bye")
-    break
-  
-  
+  elif not user_input.isdigit():
+    print("Enter a valid score")
+    continue
   new_score = int(user_input)
+  
+  for i in range(4):
+    print(current_scores)
+    current_scores[i] = current_scores[i+1]
+  current_scores[4] = new_score
+  total_score_sum = 0
+  for score in current_scores:
+    total_score_sum+=score
+  print(f"\nupdated score {current_scores}\n")
+  print(f"\ntotal number of scores {total_score_sum}\n")
 
   
 
-  for i in range(4):
-    current_scores_board_list[i] = current_scores_board_list[i+1]
-
-    current_scores_board_list[4] = new_score
-    total_score = 0
-    for total_count_ in current_scores_board_list:
-      total_score = total_score+total_count_
-
-    print(f"the current score table {current_scores_board_list} \n total score count in the last five round {total_score}")
-
-
-      
+  
